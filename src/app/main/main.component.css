@@ -1,0 +1,13 @@
+#app-title{
+  padding: 20px 0;
+  text-align: center;
+}
+
+#logo-wrapper{
+  text-align: center;
+}
+
+#logo{
+  width: 200px;
+  cursor: pointer;
+}
