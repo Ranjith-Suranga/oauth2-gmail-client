@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'oauth2-gmail-client';
+  @ViewChild('imgLogo')
+  imgLogo: ElementRef;
+
+  enterAnimation(): void {
+    this.imgLogo.nativeElement.className = 'animated bounceIn';
+  }
+
+  exitAnimation(): void {
+    this.imgLogo.nativeElement.className = '';
+  }
 }
