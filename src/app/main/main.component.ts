@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-main',
@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
+  @ViewChild('imgLogo')
+  imgLogo: ElementRef;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  enterAnimation(): void {
+    this.imgLogo.nativeElement.className = 'animated bounceIn';
+  }
+
+  exitAnimation(): void {
+    this.imgLogo.nativeElement.className = '';
   }
 
 }
