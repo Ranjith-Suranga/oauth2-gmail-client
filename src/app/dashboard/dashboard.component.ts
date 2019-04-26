@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
+import {GmailService, IResp2} from '../service/gmail.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,7 +9,9 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private router: Router) {
+  mails: IResp2[] = [];
+
+  constructor(private route: ActivatedRoute, private router: Router, private gmailService: GmailService) {
   }
 
   ngOnInit() {
@@ -21,9 +24,22 @@ export class DashboardComponent implements OnInit {
       }).split('=')[1];
       sessionStorage.setItem('access_token', accessToken);
     }
-    if (accessToken == null) {
-      this.router.navigate(['/main']);
-    }
+    this.gmailService.getAllEmails().subscribe(mail=>{
+      this.mails.push(mail);
+    });
+  }
+
+  getFrom(mail: IResp2): string{
+    return mail.payload.headers.find(header => header.name == 'From').value.replace(/<.+>/,'');
+  }
+
+  getSubject(mail: IResp2): string{
+    return mail.payload.headers.find(header => header.name == 'Subject').value;
+  }
+
+  logout(): void{
+    sessionStorage.removeItem('access_token');
+    this.router.navigate(['/main']);
   }
 
 }

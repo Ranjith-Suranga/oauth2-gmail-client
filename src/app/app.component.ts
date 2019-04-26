@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, HostListener, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,12 @@ import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  viewPortHeight: string = window.innerHeight + 'px';
+
+  @HostListener('window:resize')
+  calculateViewPortHeight(): void{
+    this.viewPortHeight = window.innerHeight + 'px';
+  }
 
 }

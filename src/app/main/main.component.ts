@@ -10,7 +10,6 @@ export class MainComponent implements OnInit {
   @ViewChild('imgLogo')
   imgLogo: ElementRef;
 
-  constructor() { }
 
   ngOnInit() {
   }

@@ -1,3 +1,56 @@
-#wrapper{
+#wrapper *{
+  font-size: 12px;
+}
+
+header h2:hover{
+  color: red;
+}
+
+header{
   padding: 10px;
+}
+
+header h2{
+  color: black;
+  float: left;
+}
+
+header #logo{
+  margin-right: 10px;
+  width: 50px;
+}
+
+header #logout{
+  width: 50px;
+  float: right;
+  cursor: pointer;
+}
+
+#wrapper{
+  clear: both;
+  padding: 10px;
+}
+
+.snippet{
+  height: 60px;
+  line-height: 25px;
+  padding-top: 5px !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.snippet:hover{
+  background-color: #cce5ff;
+}
+
+.snippet:hover strong{
+  color: blue;
+}
+
+.snippet div{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

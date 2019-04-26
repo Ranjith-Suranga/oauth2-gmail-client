@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import '~perfect-scrollbar/css/perfect-scrollbar.css';
 
 *{
   font-family: 'Open Sans', sans-serif;

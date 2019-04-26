@@ -1,3 +1,14 @@
-<div id="wrapper">
+<header>
+  <a href="/"><h2><img id="logo" src="http://www.logospng.com/images/172/gmail-glyph-icon-172435.png"
+              alt="Sura-Boy Simple Gmail Client">Simple Gmail Client</h2></a>
+  <img (click)="logout()" title="Click to Logout" id="logout" src="https://cdn2.iconfinder.com/data/icons/picons-essentials/57/logout-512.png" alt="Logout">
+</header>
 
+<div id="wrapper">
+  <div class="snippet alert alert-secondary" *ngFor="let mail of mails">
+    <strong>{{getFrom(mail)}}</strong> - <strong>{{getSubject(mail)}}</strong>
+    <div [innerHTML]="mail.snippet">
+    </div>
+  </div>
 </div>
+
