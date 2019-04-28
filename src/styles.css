@@ -4,3 +4,9 @@
 *{
   font-family: 'Open Sans', sans-serif;
 }
+
+.my-loader{
+  background-color: red !important;
+  width: 10px !important;
+  height: 55px !important;
+}

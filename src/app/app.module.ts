@@ -9,6 +9,8 @@ import {GmailService} from './service/gmail.service';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {MyInterceptor} from './my-interceptor';
 import {PERFECT_SCROLLBAR_CONFIG, PerfectScrollbarConfigInterface, PerfectScrollbarModule} from 'ngx-perfect-scrollbar';
+import {LoadersCssModule} from 'angular2-loaders-css';
+import { ReadMailComponent } from './read-mail/read-mail.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -18,13 +20,15 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   declarations: [
     AppComponent,
     DashboardComponent,
-    MainComponent
+    MainComponent,
+    ReadMailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    PerfectScrollbarModule
+    PerfectScrollbarModule,
+    LoadersCssModule
   ],
   providers: [
     GmailService,

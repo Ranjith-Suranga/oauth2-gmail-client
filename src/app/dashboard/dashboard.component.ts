@@ -10,6 +10,7 @@ import {GmailService, IResp2} from '../service/gmail.service';
 export class DashboardComponent implements OnInit {
 
   mails: IResp2[] = [];
+  loaderWrapperVisibility: boolean = true;
 
   constructor(private route: ActivatedRoute, private router: Router, private gmailService: GmailService) {
   }
@@ -26,7 +27,8 @@ export class DashboardComponent implements OnInit {
     }
     this.gmailService.getAllEmails().subscribe(mail=>{
       this.mails.push(mail);
-    });
+    }, error => console.log(error),
+      () => this.loaderWrapperVisibility  = false);
   }
 
   getFrom(mail: IResp2): string{

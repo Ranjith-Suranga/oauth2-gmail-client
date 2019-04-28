@@ -54,3 +54,7 @@ header #logout{
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+#loader-wrapper{
+  text-align: center;
+}
