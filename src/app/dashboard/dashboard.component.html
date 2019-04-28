@@ -1,11 +1,11 @@
 <header>
-  <a href="/"><h2><img id="logo" src="http://www.logospng.com/images/172/gmail-glyph-icon-172435.png"
+  <a href="/"><h2><img title="Click to go to Homepage" id="logo" src="http://www.logospng.com/images/172/gmail-glyph-icon-172435.png"
               alt="Sura-Boy Simple Gmail Client">Simple Gmail Client</h2></a>
   <img (click)="logout()" title="Click to Logout" id="logout" src="https://cdn2.iconfinder.com/data/icons/picons-essentials/57/logout-512.png" alt="Logout">
 </header>
 
 <div id="wrapper">
-  <div class="snippet alert alert-secondary" *ngFor="let mail of mails">
+  <div class="snippet alert alert-secondary" *ngFor="let mail of mails" (click)="navigate(mail.id)">
     <strong>{{getFrom(mail)}}</strong> - <strong>{{getSubject(mail)}}</strong>
     <div [innerHTML]="mail.snippet">
     </div>
@@ -15,4 +15,3 @@
 <div id="loader-wrapper" [style.display]="loaderWrapperVisibility?'block':'none'">
   <loaders-css [loader]="'line-scale'" [loaderClass]="'my-loader'"></loaders-css>
 </div>
-

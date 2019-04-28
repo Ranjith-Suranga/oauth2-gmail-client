@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit {
     // @ts-ignore
     const fragment: string = this.route.fragment.value;
     let accessToken = sessionStorage.getItem('access_token');
-    if (fragment !== null) {
+    if (fragment != null) {
       accessToken = fragment.split('&').find(value => {
         return value.startsWith('access_token');
       }).split('=')[1];
@@ -44,4 +44,7 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['/main']);
   }
 
+  navigate(mailId: string): void{
+    this.router.navigate(['/read-mail',mailId]);
+  }
 }

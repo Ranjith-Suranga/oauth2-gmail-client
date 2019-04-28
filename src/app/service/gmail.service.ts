@@ -13,6 +13,21 @@ export class GmailService {
 
   constructor(private http: HttpClient) { }
 
+  getMail(mailId: string): Observable<IResp2>{
+    return this.http.get<IResp2>(this.BASE_URL +  `messages/${mailId}`).pipe(
+      map(mail => {
+        if (mail.payload.mimeType !== 'multipart/alternative'){
+          mail.payload.body.data = Base64.decode(mail.payload.body.data);
+        }else{
+          mail.payload.parts.forEach(part => {
+            part.body.data = Base64.decode(part.body.data);
+          });
+        }
+        return mail;
+      })
+    );
+  }
+
   getAllEmails(): Observable<IResp2> {
 
     return Observable.create(observer=>{

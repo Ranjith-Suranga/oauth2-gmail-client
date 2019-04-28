@@ -1,0 +1,36 @@
+header h2:hover{
+  color: red;
+}
+
+header{
+  padding: 10px;
+}
+
+header h2{
+  color: black;
+  float: left;
+}
+
+header #logo{
+  margin-right: 10px;
+  width: 50px;
+}
+
+header #logout{
+  width: 50px;
+  float: right;
+  cursor: pointer;
+}
+
+section{
+  padding: 20px;
+  clear: both;
+}
+
+#subject{
+  font-size: 1.5em;
+}
+
+#from{
+  font-weight: bold;
+}

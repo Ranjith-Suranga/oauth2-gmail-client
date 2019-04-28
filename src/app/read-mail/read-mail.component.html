@@ -1,3 +1,19 @@
-<p>
-  read-mail works!
-</p>
+<header>
+  <a [routerLink]="['/dashboard']">
+    <h2>
+      <img title="Click to go to Homepage" id="logo"
+           src="https://cdn2.iconfinder.com/data/icons/perfect-flat-icons-2/512/Back_previous_arrow_play_next_stop_pause.png"
+           alt="Sura-Boy Simple Gmail Client">Simple Gmail Client</h2></a>
+  <img (click)="logout()" title="Click to Logout" id="logout"
+       src="https://cdn2.iconfinder.com/data/icons/picons-essentials/57/logout-512.png" alt="Logout">
+</header>
+
+<section>
+  <h2 id="subject">{{subject}}</h2>
+  <div>
+    <span id="from">{{from}}</span>
+  </div>
+  <p [innerHTML]="message">
+
+  </p>
+</section>
