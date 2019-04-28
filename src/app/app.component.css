@@ -1,0 +1,21 @@
+footer{
+  font-size: 12px;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: rgb(245, 245, 245);
+  text-align: center;
+}
+
+#icons-wrapper{
+  padding-top: 10px;
+}
+
+#icons-wrapper img{
+  width: 30px;
+  transition-property: transform;
+  transition-duration: 0.5s;
+}
+
+#icons-wrapper img:hover{
+  transform: scale(1.2);
+}

@@ -24,6 +24,12 @@ header #logout{
   width: 50px;
   float: right;
   cursor: pointer;
+  transition-duration: 100ms;
+  transition-property: transform;
+}
+
+header #logout:hover{
+  transform: scale(1.3);
 }
 
 #wrapper{
