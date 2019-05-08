@@ -4,6 +4,10 @@ A simple Gmail client SPA to demonstrate the usage of OAuth2 with Gmail APIs. Wh
 
 Hope someone finds this helpful someday...! :wink:
 
+## Live Version
+
+[See the app in action](https://ranjith-suranga.github.io/oauth2-gmail-client/)
+
 ##Prerequisites
 
 * Node JS Latest Version (https://nodejs.org/en/)
@@ -17,24 +21,14 @@ required to run the application.
 
 #### For Testing/Production Purposes
 
- 
+Run `ng build --prod`. Successful execution will create a folder called dist in the project folder.
 
-## Code scaffolding
+Run `npx lite-server`. 
+This usually opens the browser window and automatically nagivate to the site. Otherwise,
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Open the web browser and enter `http://localhost:4200`.
 
-## Build
+#### For Development Purposes
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `ng serve`, open the web browser and navigate to `http://localhost:4200`
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

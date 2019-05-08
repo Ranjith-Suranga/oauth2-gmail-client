@@ -33,7 +33,8 @@ export class GmailService {
     return Observable.create(observer=>{
 
       this.http.get<IResp1>(this.BASE_URL + 'messages?labelIds=INBOX').subscribe(resp1=>{
-        resp1.messages.forEach((msg,index) => {
+        var index = 0;
+        resp1.messages.forEach((msg) => {
           this.http.get<IResp2>(this.BASE_URL + `messages/${msg.id}`).subscribe(mail=>{
             if (mail.payload.mimeType !== 'multipart/alternative'){
               mail.payload.body.data = Base64.decode(mail.payload.body.data);
@@ -46,6 +47,7 @@ export class GmailService {
             if (index == (resp1.messages.length - 1)){
               observer.complete();
             }
+            index++;
           });
         })
       });
