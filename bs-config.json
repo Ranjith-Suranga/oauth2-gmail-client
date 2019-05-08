@@ -1,0 +1,6 @@
+{
+    "port": 4200,
+    "server": { 
+        "baseDir": "./dist/oauth2-gmail-client" 
+    }
+}

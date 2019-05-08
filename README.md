@@ -4,9 +4,20 @@ A simple Gmail client SPA to demonstrate the usage of OAuth2 with Gmail APIs. Wh
 
 Hope someone finds this helpful someday...! :wink:
 
+##Prerequisites
+
+* Node JS Latest Version (https://nodejs.org/en/)
+* Angular CLI (https://cli.angular.io/)
+* Lite Server (https://github.com/johnpapa/lite-server)
+
 ## Installation & Usage
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+First you need to run `npm install`. This will download and install all the dependencies that are
+required to run the application. 
+
+#### For Testing/Production Purposes
+
+ 
 
 ## Code scaffolding
 
