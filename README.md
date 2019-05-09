@@ -8,7 +8,7 @@ Hope someone finds this helpful someday...! :wink:
 
 [See the app in action](https://ranjith-suranga.github.io/oauth2-gmail-client/)
 
-##Prerequisites
+## Prerequisites
 
 * Node JS Latest Version (https://nodejs.org/en/)
 * Angular CLI (https://cli.angular.io/)
