@@ -4,6 +4,7 @@ import {Injectable} from '@angular/core';
 import {catchError} from 'rxjs/operators';
 import {Location} from '@angular/common';
 import {Router} from '@angular/router';
+import {environment} from '../environments/environment';
 
 @Injectable()
 export class MyInterceptor implements HttpInterceptor {
@@ -16,7 +17,7 @@ export class MyInterceptor implements HttpInterceptor {
     return next.handle(newReq).pipe(catchError(err => {
       // If the token is invalid or expired
       if (err.status === 401) {
-        window.location.replace('https://accounts.google.com/o/oauth2/v2/auth?client_id=503256322307-h16k5r5p4otjul26l7sm4lhm2et5488v.apps.googleusercontent.com&response_type=token&scope=https://www.googleapis.com/auth/gmail.readonly&state=suraboy&redirect_uri=http://localhost:4200/dashboard');
+        window.location.replace('https://accounts.google.com/o/oauth2/v2/auth?client_id=503256322307-h16k5r5p4otjul26l7sm4lhm2et5488v.apps.googleusercontent.com&response_type=token&scope=https://www.googleapis.com/auth/gmail.readonly&state=suraboy&redirect_uri=' + environment.redirectUrl);
       }
       throw (err);
     }));
