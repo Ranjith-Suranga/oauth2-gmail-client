@@ -31,17 +31,20 @@ export class GmailService {
   getAllEmails(): Observable<IResp2> {
 
     return Observable.create(observer=>{
-
       this.http.get<IResp1>(this.BASE_URL + 'messages?labelIds=INBOX').subscribe(resp1=>{
         var index = 0;
         resp1.messages.forEach((msg) => {
           this.http.get<IResp2>(this.BASE_URL + `messages/${msg.id}`).subscribe(mail=>{
-            if (mail.payload.mimeType !== 'multipart/alternative'){
-              mail.payload.body.data = Base64.decode(mail.payload.body.data);
-            }else{
-              mail.payload.parts.forEach(part => {
-                part.body.data = Base64.decode(part.body.data);
-              });
+            try {
+              if (mail.payload.mimeType !== 'multipart/alternative') {
+                mail.payload.body.data = Base64.decode(mail.payload.body.data);
+              } else {
+                mail.payload.parts.forEach(part => {
+                  part.body.data = Base64.decode(part.body.data);
+                });
+              }
+            }catch (e) {
+              console.log(e);
             }
             observer.next(mail);
             if (index == (resp1.messages.length - 1)){

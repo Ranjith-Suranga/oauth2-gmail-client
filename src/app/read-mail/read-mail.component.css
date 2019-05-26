@@ -40,3 +40,15 @@ section{
 #from{
   font-weight: bold;
 }
+
+@media all and (max-width: 450px){
+  header #logout{
+    float: none;
+  }
+
+  header{
+    text-align: center;
+  }
+}
+
+

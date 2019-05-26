@@ -64,3 +64,13 @@ header #logout:hover{
 #loader-wrapper{
   text-align: center;
 }
+
+@media all and (max-width: 450px){
+  header #logout{
+    float: none;
+  }
+
+  header{
+    text-align: center;
+  }
+}
