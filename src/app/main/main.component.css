@@ -11,3 +11,8 @@
   width: 200px;
   cursor: pointer;
 }
+
+section{
+  padding: 10px;
+  font-size: 0.9em;
+}
