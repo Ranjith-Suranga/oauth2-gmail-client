@@ -28,7 +28,43 @@
 <section>
   <h3>How does this work?</h3>
   <p>
-    Answering it basically means how <b>OAuth2 Implicit Flow Grant Type</b> works.
+    Answering it basically means how <b>OAuth2 Implicit Flow Grant Type</b> works. First of all let's look at the high
+    level overview of OAuth2 Implicit Flow Grant Type.
+  </p>
+  <img id="imgHighLevelOverview" src="../../assets/high-level-overview.png">
+  <p>
+    When OAuth2 Simple Gmail client wants to access user's Gmail, first it requires user's permission to do that which
+    means it requires user's email and the password of Gmail. But the user has no reason to trust us and give their
+    login
+    credentials. But other way around user trust Gmail. To be honest, we really don't want user login credentials as
+    long
+    as we have the permission to access his or her Gmail account. So all we need is user's permission to access the
+    Gmail.
+    That is what we are going to do. This is called <b>Delegated Authorization</b>.
+  </p>
+  <p>
+    First of all we send a HTTP request to Gmail Authorization server with few meta data. This includes three important
+    things. <b>Redirect URI</b>, <b>Response Type</b>, <b>Scope</b>. In OAuth2 Implicit Flow Grant Type Response Type
+    should be set to <b>Token</b>. This means if user consents to access his or her Gmail,
+    we ask to send us an access token which we can later use to access the Resource Server. Because in order to deal with resource server
+    we are going to need an access token.
+  </p>
+  <p>
+    <b>Scope</b> is also important. It defines what the client app really requires to access. The main difference between
+    Authorization Code grant type and Implicit Flow Grant type is, in Implicit Flow grant type everything happens in the
+    front chanel. So it could be less secured. But that is the approach that we have to take when we are dealing with Single
+    Page Applications.
   </p>
 </section>
+
+<section>
+  <h3>Where can I learn more about OAuth2?</h3>
+  <a href="https://developers.google.com/identity/choose-auth">Google Identity Platform</a>
+  <br>
+  <a href="https://aaronparecki.com/oauth-2-simplified/">OAuth 2 Simplified</a>
+  <br>
+  <a href="https://www.youtube.com/watch?v=996OiexHze0">OAuth2 and OpenID Connect in Plain English</a>
+</section>
+
+<div class="clearfix"></div>
 

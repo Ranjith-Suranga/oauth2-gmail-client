@@ -16,3 +16,9 @@ section{
   padding: 10px;
   font-size: 0.9em;
 }
+
+#imgHighLevelOverview{
+  width: 40%;
+  float: left;
+  padding-right: 10px;
+}
